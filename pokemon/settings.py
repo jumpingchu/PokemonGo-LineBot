@@ -111,4 +111,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_TMP = os.path.join(BASE_DIR, 'static')
+os.makedirs(STATIC_TMP, exist_ok=True)
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
