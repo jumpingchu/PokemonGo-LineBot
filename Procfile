@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath pokemon pokemon.wsgi
+web: gunicorn pokemon.wsgi
