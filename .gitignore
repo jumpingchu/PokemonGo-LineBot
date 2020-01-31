@@ -3,4 +3,7 @@ djangomaker.bat
 ngrok.exe
 static/*
 templates/*
-pokemon/settings.py
+#pokemon/settings.py
+
+Procfile
+requirements.txt
