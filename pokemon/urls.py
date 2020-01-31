@@ -5,5 +5,5 @@ from pokemongogo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^callback$', views.callback)
+    url('callback', views.callback)
 ]
