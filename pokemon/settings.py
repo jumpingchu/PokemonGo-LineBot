@@ -9,6 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'b!6*52h!fbpdr!5)%3)dfd6b&(ph^ufx*nr91@m8tpd2yiou#^'
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 LINE_CHANNEL_ACCESS_TOKEN = 'xJlgvfK7kDl9acbhNySsxizQcQxk6Lq9pEj/ivTIHAEthRIdE+lLfxqQLzeAQRuwWvzXclDtKY+01OfcHTLjlPmKI6LnnYxJUlE5s0NTw0rSnHaQ0V59xfQyHHIi56Tc/cX/rGJ1ZBR7rbc58a00QQdB04t89/1O/w1cDnyilFU='
 LINE_CHANNEL_SECRET = 'a260565431a38644c6e44f0add7e1cb4'
