@@ -4,3 +4,4 @@ line-bot-sdk==1.12.1
 dj-static
 dj-database-url
 psycopg2
+static3
