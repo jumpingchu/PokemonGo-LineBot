@@ -16,3 +16,23 @@
 
 1. 團體戰攻略 (圖片)
 2. 團體戰頭目一覽 (圖片)
+3. 最新消息 (更新中...)
+
+## Demo
+
+### 圖文選單
+
+![richmenu_demo](static/richmenu_demo.jpg)
+
+### 團體戰打手
+
+1. 按鈕樣板
+2. 傳送文字
+
+![demo1](static/demo1.jpg)
+
+![richmenu_demo](static/demo2.jpg)
+
+### 頭目一覽
+
+![richmenu_demo](static/demo3.jpg)
