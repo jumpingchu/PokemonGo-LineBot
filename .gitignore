@@ -1,9 +1,9 @@
-db.sqlite3
 djangomaker.bat
 ngrok.exe
 static/*
 templates/*
-#pokemon/settings.py
 
+#pokemon/settings.py
+#db.sqlite3
 #Procfile
 #requirements.txt
