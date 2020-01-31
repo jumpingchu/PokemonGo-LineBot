@@ -22,17 +22,17 @@
 
 ### 圖文選單
 
-![richmenu_demo](static/richmenu_demo.jpg)
+![richmenu_demo](demo_image/richmenu_demo.jpg)
 
 ### 團體戰打手
 
 1. 按鈕樣板
 2. 傳送文字
 
-![demo1](static/demo1.jpg)
+![demo1](demo_image/demo1.jpg)
 
-![richmenu_demo](static/demo2.jpg)
+![richmenu_demo](demo_image/demo2.jpg)
 
 ### 頭目一覽
 
-![richmenu_demo](static/demo3.jpg)
+![richmenu_demo](demo_image/demo3.jpg)
