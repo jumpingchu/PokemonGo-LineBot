@@ -2,6 +2,7 @@ djangomaker.bat
 ngrok.exe
 static/*
 templates/*
+*.pyc
 
 #pokemon/settings.py
 #db.sqlite3
