@@ -5,3 +5,4 @@ dj-static
 dj-database-url
 psycopg2
 static3
+requests
