@@ -7,3 +7,4 @@ psycopg2
 static3
 requests
 bs4
+html5lib
