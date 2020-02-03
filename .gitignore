@@ -5,7 +5,7 @@ templates/*
 *.pyc
 demo_image/*
 
-#pokemon/settings.py
-#db.sqlite3
-#Procfile
-#requirements.txt
+pokemon/settings.py
+db.sqlite3
+Procfile
+requirements.txt
