@@ -38,7 +38,7 @@ def callback(request):
                         func.counter_template(event)
                     elif mtext == '最新消息':
                         func.new_info(event)
-                    elif mtext.lower() == 'ptt':
+                    elif mtext == 'PTT':
                         func.ptt_info(event)
                     else:
                         func.not_found(event)
