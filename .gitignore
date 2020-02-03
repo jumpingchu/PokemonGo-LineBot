@@ -3,9 +3,10 @@ ngrok.exe
 static/*
 templates/*
 *.pyc
-demo_image/*
 
 pokemon/settings.py
 db.sqlite3
 Procfile
 requirements.txt
+
+#demo_image/*
