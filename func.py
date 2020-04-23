@@ -13,12 +13,22 @@ from datetime import datetime
 line_bot_api = LineBotApi(settings.LINE_CHANNEL_ACCESS_TOKEN)
 
 def get_page(url):
+    """
+    【爬蟲】基本程式
+    * 回傳 soup 物件
+    """
     resp = requests.get(url)
     resp.encoding = 'utf-8'
     soup = BeautifulSoup(resp.text, 'html5lib')
     return soup
 
 def get_allBoss(event):
+    """
+    【頭目一覽】
+    1. 爬 LeekDuck 網站
+    2. 抓圖片網址，特殊字元轉換 (空格 = %20，é = %C3%A9)
+    3. 回覆圖片網址給使用者
+    """
     base_url = 'https://leekduck.com'
     boss_url = '/boss/'
     soup = get_page(base_url+boss_url)
@@ -35,8 +45,18 @@ def get_allBoss(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(e.__class__.__name__))
 
 def get_current_counter(event):
-    
+    """
+    【團體戰打手】
+    1. 爬 LeekDuck 網站
+    2. 取得常規團體戰和SP團體戰的頁面
+    3. 利用 raid_bosses 函式回傳的 list 回傳活動剩餘時間和圖片網址給使用者
+    4. 當有 3 個以上團體戰時，只顯示圖片 (因 Line 的限制只能 5 則訊息)
+    """
     def convert_timedelta(duration):
+        """
+        【時間格式轉換】
+        * 回傳 4 個變數: days, hours, minutes, seconds
+        """
         days, seconds = duration.days, duration.seconds + 3600*8 # 與網站的時間同步
         hours = seconds // 3600
         if hours > 23:
@@ -47,6 +67,13 @@ def get_current_counter(event):
         return days, hours, minutes, seconds
     
     def raid_bosses(boss_div):
+        """
+        【爬蟲】尋找頁面上所有團體戰
+        1. 時間顯示若異常，所有時間的變數 = "??"
+        2. 圖片網址特殊字元轉換 (空格 = %20)
+        3. 若無圖片，找封面圖；若無封面圖，網址 = "找不到圖片"
+        4. 最後回傳 2 個list: 活動剩餘時間 (boss_list), 圖片網址 (img_list)
+        """
         boss_list = []
         img_list = []
         today = datetime.now()
@@ -134,8 +161,6 @@ def get_current_counter(event):
         except Exception as e:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(e.__class__.__name__))
 
-        
-
     elif len(text_list) == 3:
         try:
             message = [
@@ -187,6 +212,12 @@ def get_current_counter(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(e.__class__.__name__))
 
 def check_other_boss(search_boss):
+    """
+    【爬蟲】文字輸入功能
+    1. 爬 Pokemonhubs 網站
+    2. 回傳符合使用者輸入字詞的文章和網址 (str)
+    3. 後續在 other 函式中使用
+    """ 
     boss_url = 'https://www.pokemonhubs.com/pokemongo/category/legendary-raidboss/'
     current_page = get_page(boss_url)
     contents = []
@@ -235,8 +266,8 @@ def check_other_boss(search_boss):
 def get_news(event):
     """
     【爬蟲】
-    1. 取得寶可夢官方網站3篇最新貼文
-    2. 回傳 3 個變數給使用者: 文章標題、時間、連結
+    1. 取得寶可夢官方網站 3 篇最新貼文
+    2. 回傳使用者: 文章標題、時間、連結
     """
     base_url = 'https://pokemongolive.com'
     post_url = '/zh_hant/post'
@@ -263,7 +294,7 @@ def get_ptt(event):
     """
     【爬蟲】
     1. 取得PokemonGo板近期貼文 (網頁版最新兩頁)
-    2. 篩選: 推文樹 > 50 且非公告
+    2. 篩選: 推文數 > 50 且非公告文
     3. 回傳文章標題、時間、連結、推文數
     """
     ptt_url = 'https://www.ptt.cc'
@@ -383,7 +414,7 @@ def other(event, text):
 
 def intro(event):
     text = """【最新消息】
-提供最新一則官網消息
+提供最新 3 則官網消息
 
 【團體戰打手】
 提供當期頭目的打手攻略
