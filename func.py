@@ -1,11 +1,6 @@
 from django.conf import settings
-from pokemongogo.models import CounterInfo
-from pokemongogo.models import News
-from pokemongogo.models import PttArticles
-
 from linebot import LineBotApi
 from linebot.models import TextSendMessage, ImageSendMessage, TemplateSendMessage, ButtonsTemplate, MessageTemplateAction
-
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime

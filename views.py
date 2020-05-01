@@ -31,11 +31,6 @@ def callback(request):
             if isinstance(event, MessageEvent):
                 if isinstance(event.message, TextMessage):
                     mtext = event.message.text
-                    #unit_exist = func.data_exist(mtext)
-                    #if unit_exist:
-                    #    func.counter_info(event, mtext)
-                    #elif mtext == '團體戰打手':
-                    #    func.counter_template(event)
                     if mtext == '最新消息':
                         func.get_news(event)
                     elif mtext == 'PTT':
