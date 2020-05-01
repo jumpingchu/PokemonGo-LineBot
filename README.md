@@ -76,12 +76,18 @@
 
 ## 加入好友
 
-1. ID：
+1. ID
 
         @166edspc
 2. QRcode
 
     ![qrcode](demo_images/166edspc.png)
+
+備註：
+
+* 由於 Heroku app 會自動休眠，隔一段時間未使用時，第一則訊息回覆時間會較長
+
+* 歡迎發 issue 或 PR 提供建議與想法
 
 ---
 
