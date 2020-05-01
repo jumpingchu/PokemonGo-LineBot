@@ -74,6 +74,17 @@
 
 ---
 
+## 加入好友
+
+1. ID：
+
+        @166edspc
+2. QRcode
+
+    ![qrcode](demo_images/166edspc.png)
+
+---
+
 ## 版本紀錄
 
 ### v 2.0 (Current version)
