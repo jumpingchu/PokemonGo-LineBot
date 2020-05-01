@@ -72,8 +72,6 @@
 
 ![demo1](demo_images/tom.jpg)
 
-### 使用說明
-
 ---
 
 ## 版本紀錄
